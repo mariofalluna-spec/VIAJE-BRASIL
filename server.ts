@@ -353,10 +353,8 @@ async function startServer() {
   });
 }
 
-if (process.env.NODE_ENV !== "production" || !process.env.VERCEL) {
-  startServer().catch((err) => {
-    console.error("Fallo al inicializar el servidor Express:", err);
-  });
-}
+startServer().catch((err) => {
+  console.error("Fallo al inicializar el servidor Express:", err);
+});
 
 export default app;
